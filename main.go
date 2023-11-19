@@ -1,46 +1,46 @@
-// Package main ZeroBot-Plugin main file
-package main
+//包件主文件
+包装分组
 
-import (
-	"encoding/json"
-	"flag"
-	"fmt"
-	"math/rand"
-	"os"
-	"runtime"
-	"strconv"
-	"strings"
-	"time"
+进口(
+	      "encoding/json"      "encoding/json"
+	      "flag"      "flag"
+	      "fmt"      "fmt"
+	      "数学/兰德"      "数学/兰德"
+	      "os"      "os"
+	      "runtime"      "runtime"
+	      "strconv"      "strconv"
+	     "strings"     "strings"
+	    "time"    "time"
 
-	_ "github.com/FloatTech/ZeroBot-Plugin/console" // 更改控制台属性
+	_ "吉特布网/弗罗泰克/ZERbob/控制台"    // 更改控制台属性"github.com/FloatTech/ZeroBot-Plugin/console" // 更改控制台属性
 
-	"github.com/FloatTech/ZeroBot-Plugin/kanban" // 打印 banner
+	     "吉特布网/弗罗泰克/零博特-普尔金/坎班"      // 打印 banner"github.com/FloatTech/ZeroBot-Plugin/kanban" // 打印 banner
 
-	// ---------以下插件均可通过前面加 // 注释，注释后停用并不加载插件--------- //
-	// ----------------------插件优先级按顺序从高到低---------------------- //
-	//                                                                  //
-	//                                                                  //
-	//                                                                  //
-	//                                                                  //
-	//                                                                  //
-	// ----------------------------高优先级区---------------------------- //
+	// ---------以下插件均可通过前面加 // 注释，注释后停用并不加载插件--------- //// ---------以下插件均可通过前面加 // 注释，注释后停用并不加载插件--------- //
+	// ----------------------插件优先级按顺序从高到低---------------------- //// ----------------------插件优先级按顺序从高到低---------------------- //
+	//                                                                  ////                                                                  //
+	//                                                                  ////                                                                  //
+	//                                                                  ////                                                                  //
+	//                                                                  ////                                                                  //
+	//                                                                  ////                                                                  //
+	// ----------------------------高优先级区---------------------------- //// ----------------------------高优先级区---------------------------- //
 	// vvvvvvvvvvvvvvvvvvvvvvvvvvvv高优先级区vvvvvvvvvvvvvvvvvvvvvvvvvvvv //
 	//               vvvvvvvvvvvvvv高优先级区vvvvvvvvvvvvvv               //
 	//                      vvvvvvv高优先级区vvvvvvv                      //
 	//                          vvvvvvvvvvvvvv                          //
 	//                               vvvv                               //
 
-	_ "github.com/FloatTech/ZeroBot-Plugin/plugin/antiabuse" // 违禁词
+	_      "吉特布网/弗罗特泰克/零博-普卢金/插件/反滥用"     // 违禁词
 
-	_ "github.com/FloatTech/ZeroBot-Plugin/plugin/chat" // 基础词库
+	_ "吉特布.com/弗罗特理工/ZEROBUIN/插件/聊天"   // 基础词库"吉特布.com/弗罗特理工/ZEROBUIN/插件/聊天"  // 基础词库
 
-	_ "github.com/FloatTech/ZeroBot-Plugin/plugin/sleepmanage" // 统计睡眠时间
+	_ "吉特布网/弗罗特泰克/零插孔/插件/睡眠管理"   // 统计睡眠时间
 
-	_ "github.com/FloatTech/ZeroBot-Plugin/plugin/atri" // ATRI词库
+	_ "吉特布网/弗罗特技术公司/零博特-普卢金/塞丁/阿特里"   // ATRI词库
 
-	_ "github.com/FloatTech/ZeroBot-Plugin/plugin/manager" // 群管
+	_ "吉特布.com/弗罗特理工/ZEROBUIN/插件/管理器"   // 群管
 
-	_ "github.com/FloatTech/zbputils/job" // 定时指令触发器
+	_ "通用网/通用技术/Zbputies/工作"  // 定时指令触发器
 
 	//                               ^^^^                               //
 	//                          ^^^^^^^^^^^^^^                          //
@@ -60,10 +60,10 @@ import (
 	//                          vvvvvvvvvvvvvv                          //
 	//                               vvvv                               //
 
-	_ "github.com/FloatTech/ZeroBot-Plugin/plugin/ahsai"            // ahsai tts
-	_ "github.com/FloatTech/ZeroBot-Plugin/plugin/aifalse"          // 服务器监控
-	_ "github.com/FloatTech/ZeroBot-Plugin/plugin/aipaint"          // ai绘图
-	_ "github.com/FloatTech/ZeroBot-Plugin/plugin/aiwife"           // 随机老婆
+	_ "吉特布网/弗罗特泰克/零博博-普卢金/插件/阿塞"             // ahsai tts
+	_ "吉特布网/弗罗特技术公司/零博-普卢金/插件/艾弗尔斯"           // 服务器监控
+	_ "吉特布网/弗罗泰克/零博特-普卢金/插件/艾莱提"           // ai绘图
+	_ "吉特布.网/弗罗特理工/零博博-普卢金/插件/爱妻"            // 随机老婆
 	_ "github.com/FloatTech/ZeroBot-Plugin/plugin/alipayvoice"      // 支付宝到账语音
 	_ "github.com/FloatTech/ZeroBot-Plugin/plugin/autowithdraw"     // 触发者撤回时也自动撤回
 	_ "github.com/FloatTech/ZeroBot-Plugin/plugin/baidu"            // 百度一下
@@ -226,7 +226,7 @@ func init() {
 	// 直接写死 URL 时，请更改下面第二个参数
 	url := flag.String("u", "ws://127.0.0.1:6700", "Set Url of WSClient.")
 	// 默认昵称
-	adana := flag.String("n", "椛椛", "Set default nickname.")
+	adana := flag.String("n", "机器人", "Set default nickname.")
 	prefix := flag.String("p", "/", "Set command prefix.")
 	runcfg := flag.String("c", "", "Run from config file.")
 	save := flag.String("s", "", "Save default config to file and exit.")
@@ -258,7 +258,7 @@ func init() {
 	}
 
 	// 通过代码写死的方式添加主人账号
-	// sus = append(sus, 12345678)
+	 sus = append(sus, 1815266491)
 	// sus = append(sus, 87654321)
 
 	// 启用 webui
