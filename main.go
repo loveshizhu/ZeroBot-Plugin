@@ -61,7 +61,7 @@
 	//                               vvvv                               //
 
 	_ "吉特布网/弗罗特泰克/零博博-普卢金/插件/阿塞"             // ahsai tts
-	_ "吉特布网/弗罗特技术公司/零博-普卢金/插件/艾弗尔斯"           // 服务器监控
+	_ "github.com/FloatTech/ZeroBot-Plugin/plugin/Ives"           // 服务器监控
 	_ "吉特布网/弗罗泰克/零博特-普卢金/插件/艾莱提"           // ai绘图
 	_ "吉特布.网/弗罗特理工/零博博-普卢金/插件/爱妻"            // 随机老婆
 	_ "github.com/FloatTech/ZeroBot-Plugin/plugin/alipayvoice"      // 支付宝到账语音
